@@ -1,12 +1,12 @@
-Berikut contoh **halaman portfolio sederhana** sebagai latihan yang menggabungkan HTML + CSS + Flexbox + sedikit responsive. Struktur dibuat cukup realistis tapi tetap mudah dipahami.
+Berikut contoh **halaman portfolio sederhana** yang bisa kamu gunakan sebagai latihan. Contoh ini menggabungkan HTML + CSS + Flexbox + sedikit responsive, serta menggunakan gambar agar tampil lebih menarik.
 
 ---
 
 # Latihan: Halaman Portfolio Sederhana
 
-## Struktur Folder
+## Struktur File
 
-```
+```text
 portfolio/
 │── index.html
 │── style.css
@@ -14,9 +14,9 @@ portfolio/
 
 ---
 
-## File: index.html
+## File: `index.html`
 
-```html id="pf1html"
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -30,58 +30,62 @@ portfolio/
   <header class="navbar">
     <h2>MyPortfolio</h2>
     <nav>
-      <a href="#about">Tentang</a>
-      <a href="#project">Project</a>
-      <a href="#contact">Kontak</a>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Project</a>
+      <a href="#">Contact</a>
     </nav>
   </header>
 
-  <!-- Hero -->
+  <!-- Hero Section -->
   <section class="hero">
-    <img src="https://via.placeholder.com/120" alt="Foto Profil">
+    <img src="https://via.placeholder.com/150" alt="Foto Profil">
     <h1>Nama Kamu</h1>
     <p>Web Developer Pemula</p>
   </section>
 
-  <!-- Tentang -->
-  <section id="about" class="about">
+  <!-- About -->
+  <section class="about">
     <h2>Tentang Saya</h2>
     <p>
-      Saya sedang belajar HTML, CSS, dan JavaScript.
-      Saya tertarik menjadi seorang web developer.
+      Saya sedang belajar HTML, CSS, dan JavaScript untuk menjadi web developer.
+      Saya tertarik membuat website yang menarik dan responsif.
     </p>
   </section>
 
   <!-- Project -->
-  <section id="project" class="project">
+  <section class="projects">
     <h2>Project Saya</h2>
-
     <div class="project-container">
+      
       <div class="card">
+        <img src="https://via.placeholder.com/300x150">
         <h3>Project 1</h3>
-        <p>Website sederhana menggunakan HTML</p>
+        <p>Website sederhana menggunakan HTML.</p>
       </div>
 
       <div class="card">
+        <img src="https://via.placeholder.com/300x150">
         <h3>Project 2</h3>
-        <p>Form pendaftaran sederhana</p>
+        <p>Landing page dengan CSS.</p>
       </div>
 
       <div class="card">
+        <img src="https://via.placeholder.com/300x150">
         <h3>Project 3</h3>
-        <p>Landing page sederhana</p>
+        <p>Portfolio pertama saya.</p>
       </div>
+
     </div>
   </section>
 
-  <!-- Kontak -->
-  <section id="contact" class="contact">
-    <h2>Kontak</h2>
-
+  <!-- Contact -->
+  <section class="contact">
+    <h2>Contact</h2>
     <form>
-      <input type="text" placeholder="Nama">
-      <input type="email" placeholder="Email">
-      <textarea placeholder="Pesan"></textarea>
+      <input type="text" placeholder="Nama"><br>
+      <input type="email" placeholder="Email"><br>
+      <textarea placeholder="Pesan"></textarea><br>
       <button type="submit">Kirim</button>
     </form>
   </section>
@@ -97,12 +101,12 @@ portfolio/
 
 ---
 
-## File: style.css
+## File: `style.css`
 
-```css id="pf1css"
+```css
 body {
-  font-family: Arial;
   margin: 0;
+  font-family: Arial, sans-serif;
   background-color: #f4f4f4;
 }
 
@@ -113,7 +117,7 @@ body {
   align-items: center;
   background-color: #333;
   color: white;
-  padding: 10px 20px;
+  padding: 15px;
 }
 
 .navbar a {
@@ -126,50 +130,49 @@ body {
 .hero {
   text-align: center;
   padding: 40px;
-  background: white;
+  background-color: #fff;
 }
 
 .hero img {
   border-radius: 50%;
+  width: 120px;
 }
 
-/* Section umum */
+/* Section */
 section {
   padding: 30px;
-  margin: 20px;
-  background: white;
-  border-radius: 8px;
+  text-align: center;
 }
 
-/* Project */
+/* Projects */
 .project-container {
   display: flex;
-  gap: 10px;
+  gap: 15px;
+  justify-content: center;
 }
 
 .card {
-  flex: 1;
-  background: #eee;
-  padding: 20px;
-  border-radius: 8px;
+  background: white;
+  padding: 15px;
+  width: 250px;
+  border-radius: 10px;
 }
 
-/* Form */
-form {
-  display: flex;
-  flex-direction: column;
+.card img {
+  width: 100%;
+  border-radius: 5px;
 }
 
-input, textarea {
-  margin-bottom: 10px;
+/* Contact */
+.contact input,
+.contact textarea {
+  width: 60%;
   padding: 10px;
+  margin: 5px;
 }
 
-button {
-  padding: 10px;
-  background: #333;
-  color: white;
-  border: none;
+.contact button {
+  padding: 10px 20px;
 }
 
 /* Footer */
@@ -184,73 +187,44 @@ footer {
 @media (max-width: 600px) {
   .project-container {
     flex-direction: column;
+    align-items: center;
+  }
+
+  .contact input,
+  .contact textarea {
+    width: 90%;
   }
 }
 ```
 
 ---
 
-## Penjelasan Singkat
+## Tujuan Latihan
 
-Halaman ini terdiri dari beberapa bagian utama:
+Dengan membuat halaman ini, kamu akan melatih:
 
-* Navbar → navigasi antar section
-* Hero → identitas utama (nama & foto)
-* About → deskripsi diri
-* Project → menampilkan karya
-* Contact → form sederhana
-* Footer → informasi penutup
-
-Flexbox digunakan pada:
-
-```css
-.project-container {
-  display: flex;
-}
-```
-
-Responsive dilakukan dengan:
-
-```css
-@media (max-width: 600px) {
-  .project-container {
-    flex-direction: column;
-  }
-}
-```
-
----
-
-## Tantangan Pengembangan
-
-Coba modifikasi sendiri:
-
-1. Tambahkan gambar di setiap project
-2. Tambahkan hover effect pada card:
-
-   ```css
-   .card:hover {
-     background: #ddd;
-   }
-   ```
-3. Tambahkan link ke project (pakai `<a>`)
-4. Ubah warna tema sesuai selera
-5. Tambahkan social media (GitHub / Instagram)
-
----
-
-## Hasil yang Diharapkan
-
-Setelah latihan ini, kamu sudah bisa:
-
-* Membuat halaman portfolio sederhana
+* Menggabungkan HTML dan CSS dalam satu project
 * Menggunakan Flexbox untuk layout
-* Menggunakan form dalam website
-* Membuat tampilan responsive dasar
+* Membuat card layout
+* Menggunakan gambar dalam website
+* Membuat tampilan responsive sederhana
+* Membuat struktur website lengkap (navbar, section, footer)
 
 ---
 
-Kalau kamu mau, aku bisa lanjutkan ke:
+## Tantangan Tambahan
 
-* versi **portfolio yang lebih profesional (dengan animasi + Tailwind)**
-* atau **langsung ke JavaScript (biar websitenya interaktif)**
+Jika ingin meningkatkan skill, coba:
+
+* Ganti gambar placeholder dengan gambar asli
+* Tambahkan hover effect pada card
+* Tambahkan icon (misalnya sosial media)
+* Ubah warna agar lebih personal
+* Tambahkan animasi sederhana dengan CSS
+
+---
+
+Kalau kamu mau, aku bisa bantu:
+
+* upgrade jadi **portfolio yang lebih profesional (pakai Tailwind / animasi)**
+* atau jadikan ini **template siap pakai untuk skripsi / CV online**
